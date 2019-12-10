@@ -1,29 +1,23 @@
 package main
 
 import (
+	"net/http"
 
-    "net/http"
-
-    "github.com/gin-gonic/gin"
-
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
 
-    router := gin.Default()
+	router := gin.Default()
+	router.LoadHTMLGlob("views/*.html")
+	router.Static("/assets", "./assets")
 
-    router.LoadHTMLGlob("views/*.html")
+	router.GET("/", func(ctx *gin.Context) {
 
-    router.Static("/assets", "./assets")
+		ctx.HTML(http.StatusOK, "login.html", gin.H{})
 
+	})
 
-
-    router.GET("/", func(ctx *gin.Context){
-
-        ctx.HTML(http.StatusOK, "index.html", gin.H{})
-
-    })
-
-    router.Run(":8080")
+	router.Run(":8080")
 
 }

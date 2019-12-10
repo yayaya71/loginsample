@@ -8,34 +8,35 @@
         </script>
     </head>
 
-    <body onload="fieldChanged();">
-
-        <h1>Hello</h1>
+    <body>
+        <h2>Login</h2>
 
          <hr>
 
          <div align="center">
 
          <table>
-
              <form action="jump.html" method="post">
-
-             <tr><th>User ID</th>
-
-                 <td><input type="text" name="userID" value="" size="24" id="user_id" 
-
-                            onkeyup="fieldChanged();" onchange="fieldChanged();"></td></tr>
-
+            
+             <tr>
+             <th>User ID</th>
+             <td><input type="text" name="userID" value="" size="24" id="user_id" 
+             onclick="pass"></td>
+             </tr>
              <br>
 
-             <tr><th>Password</th>
-
-                 <td><input type="password" name="password" value="" size="24" id="user_id"
-
-                            onkeyup="fieldChanged();" onchange="fieldChanged();"></td></tr>
+             <tr>
+             <th>Password</th>
+             <td><input type="password" name="password" value="" size="24" id="user_id"
+             onclick="userId"></td>
+             </tr>
              <br>
              <br>
-             <tr><td><button type="submit" value="login" id="login">login</button></td></tr>
+
+             <tr>
+             <td><button type="submit" value="login" id="login">login</button></td>
+             </tr>
+
              </form>    
          </table>
     </body>
